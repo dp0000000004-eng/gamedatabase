@@ -114,7 +114,7 @@ def main():
             )
 
             connect.commit()  
-            print("Data inserted successfully!")
+            print("Account created successfully!")
         elif choice == "3":
             break
 
@@ -125,9 +125,11 @@ def main():
         elif choice == "2":
             while True:
                 try:
-                    player_uid = int(input("Enter your UID : "))
+                    player_uid = int(input("Enter your UID (if forgot press 'space' and enter): "))
                 except ValueError:
-                    print("Enter Valid Uid")
+                    break
+                
+                
 
                 player = find_player(cursor, player_uid)
                 if player:
@@ -165,9 +167,6 @@ def main():
                         print("Update successfully!")
                         break
 
-
-                        
-                
                     elif choice == "3":
                         print(f"""PLayer.Name: {player[1]} | Total.win: {player[4]} | Rank: {player[6]}""")
                         break
@@ -178,8 +177,8 @@ def main():
         elif choice == "3":
             break
         
-        connect.close()
-        cursor.close()
+    connect.close()
+    cursor.close()
                     
 
 if __name__ == "__main__":
