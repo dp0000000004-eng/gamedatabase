@@ -113,7 +113,7 @@ def main():
                 (game.player_uid, game.player_id, game.total_win, total_loss, game.game_rank)
             )
 
-            connect.commit()  # ✅ Must commit to save changes
+            connect.commit()  
             print("Data inserted successfully!")
         elif choice == "3":
             break
